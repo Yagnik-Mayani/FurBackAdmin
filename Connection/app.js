@@ -7,6 +7,8 @@ const { Login, Category, Offer, Product, Profile } = require('../UserSchema/sche
 const { orderSchema } = require('../ClientSchema/schema');
 const app = express();
 const PORT = 3000;
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
 
 // Enable CORS
 app.use(cors()); // Enable all origins (you can customize it if needed)

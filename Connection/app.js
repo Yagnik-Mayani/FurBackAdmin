@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 const storage = multer.memoryStorage(); // or use diskStorage if you want to save to filesystem
 const upload = multer({ storage });
 
-const MONGO_URI = "mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/adminDB"
+const MONGO_URI = "mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/adminDB?retryWrites=true&w=majority&appName=Cluster0"
 // MongoDB Connection
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -26,7 +26,7 @@ mongoose.connect(MONGO_URI, {
   console.error('MongoDB connection error:', err);
 });
 
-const clientDB = mongoose.createConnection('mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/clientDB', {
+const clientDB = mongoose.createConnection('mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/clientDB?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

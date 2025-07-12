@@ -59,7 +59,7 @@ app.post('/admin', async (req, res) => {
 });
 
 //Add Category
-app.post('/api/category', async (req, res) => {
+app.post('https://furbackadmin.onrender.com/api/category', async (req, res) => {
   const { categoryName } = req.body;
 
   try {

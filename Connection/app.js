@@ -17,19 +17,13 @@ const upload = multer({ storage });
 
 const MONGO_URI = "mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/adminDB?retryWrites=true&w=majority&appName=Cluster0"
 // MongoDB Connection
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(MONGO_URI).then(() => {
   console.log('MongoDB connected');
 }).catch(err => {
   console.error('MongoDB connection error:', err);
 });
 
-const clientDB = mongoose.createConnection('mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/clientDB?retryWrites=true&w=majority&appName=Cluster0', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+const clientDB = mongoose.createConnection('mongodb+srv://Yagnik:M.y.k.@cluster0.lqrel0o.mongodb.net/clientDB?retryWrites=true&w=majority&appName=Cluster0');
 
 clientDB.on('connected', () => {
     console.log('Connected to adminDB');
